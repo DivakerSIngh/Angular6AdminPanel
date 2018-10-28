@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { QuestionComponent } from './pages/question/question.component';
-import { AdsComponent } from './pages/ads/ads.component';
+
 import { CmsComponent } from './pages/cms/cms.component';
 import { LeftmenuComponent } from './component/leftmenu/leftmenu.component';
 
@@ -14,7 +14,7 @@ const routes: Routes = [
     path: '',  component: LeftmenuComponent, children: [
       { path: '', component: DashboardComponent },
       { path: 'question', component: QuestionComponent },
-      { path: 'ads', component: AdsComponent },
+      { path: 'ads',  loadChildren: './pages/ads/ads.module#AdsModule',  },
       { path: 'cms', component: CmsComponent },
       { 
         path: 'support',

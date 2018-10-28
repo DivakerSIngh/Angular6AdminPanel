@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { QuestionComponent } from './pages/question/question.component';
-import { AdsComponent } from './pages/ads/ads.component';
+
 import { CmsComponent } from './pages/cms/cms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -49,6 +49,8 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
+import { AdslistComponent } from './pages/adslist/adslist.component';
+import { AdsDetailsComponent } from './pages/ads-details/ads-details.component';
 
 @NgModule({
   imports: [
@@ -91,6 +93,6 @@ import {
   MatTreeModule,
   MatFormFieldModule,FormsModule, ReactiveFormsModule
   ],
-  declarations: [DashboardComponent, QuestionComponent, AdsComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent]
+  declarations: [DashboardComponent, QuestionComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent, AdslistComponent, AdsDetailsComponent]
 })
 export class LayoutModule { }
