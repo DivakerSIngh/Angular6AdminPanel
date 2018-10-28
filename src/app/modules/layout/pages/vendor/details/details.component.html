@@ -1,0 +1,63 @@
+<div class="col-md-12 mainWrrapper">
+    <div class="card wrapper">
+        <div class="header" class="col-sm-12">
+            <h4 class="title">User Details</h4>                           
+        </div>
+        <form>
+          <div class="row">
+              <div class="col-md-3">
+              <img class="profile-img" [src]="vendorDetails.profileImage"  alt="..."/>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Name</mat-label>
+                    <input [disabled]="true" [value]="vendorDetails.name" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Email</mat-label>
+                    <input [disabled]="true" [value]="vendorDetails.email" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Staus</mat-label>
+                    <input [disabled]="true" [value]="vendorDetails.married=='true'?'Married':'Single'" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Gender</mat-label>
+                    <input [disabled]="true" [value]="vendorDetails.female=='true'?'Female':'Male'" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Location</mat-label>
+                    <input [disabled]="true" [value]="vendorDetails.location" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Active</mat-label>
+                    <input  [disabled]="true" [value]="vendorDetails.active==1?'Active':'Deactive'" matInput placeholder="Name"  >
+             </mat-form-field>
+            
+           
+            
+            </div>
+          </div>
+        </form>
+        </div>
+        <div>
+            <button mat-stroked-button  routerLink="/home/vendor">Go Back</button>
+        </div>
+      </div>
+

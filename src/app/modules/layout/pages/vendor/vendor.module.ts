@@ -1,17 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { LayoutRoutingModule } from './layout-routing.module';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { SupportComponent } from './pages/support/support.component';
-import { QuestionComponent } from './pages/question/question.component';
-import { AdsComponent } from './pages/ads/ads.component';
-import { CmsComponent } from './pages/cms/cms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { LeftmenuComponent } from './component/leftmenu/leftmenu.component';
-import { ErrorComponent } from './component/error/error.component';
-import { PaginationComponent } from './component/pagination/pagination.component';
+import { VendorRoutingModule } from './vendor-routing.module';
+import { ListComponent } from './list/list.component';
+import { DetailsComponent } from './details/details.component';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -50,11 +42,10 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
-
 @NgModule({
   imports: [
     CommonModule,
-    LayoutRoutingModule,
+    VendorRoutingModule,
     MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
@@ -91,7 +82,8 @@ import {
   MatTooltipModule,
   MatTreeModule,
   MatFormFieldModule,FormsModule, ReactiveFormsModule
+  
   ],
-  declarations: [DashboardComponent, SupportComponent, QuestionComponent, AdsComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent]
+  declarations: [ListComponent, DetailsComponent]
 })
-export class LayoutModule { }
+export class VendorModule { }

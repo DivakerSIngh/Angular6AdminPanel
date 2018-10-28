@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+button.mat-stroked-button.mat-primary {
+    background: #01f403;
+    color: black;
+}
+button.mat-stroked-button {
+    background: #ff000030;
+}
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.card {
+    /* border-radius: 4px; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.act{
+    color: red;
+}
+.deact{
+    color:  #09f981;;
+}
+
+.card .header {
+    padding: 15px 15px 0;
+}
+
+.mainWrrapper{
+
+    margin-top: 12px;
+}
+
+.mat-slide-toggle-thumb {
+    height: 15px !important;
+    width: 16px !important;
+    border-radius: 50%;
+}
+.mat-slide-toggle-bar {
+    position: relative;
+    width: 31px !important;
+    height: 10px !important;
+    flex-shrink: 0;
+    border-radius: 8px;
+}

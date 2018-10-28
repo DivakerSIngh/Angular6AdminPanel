@@ -1,0 +1,8 @@
+<div *ngIf="formCtrl.invalid && (formCtrl.dirty || formCtrl.touched)">
+    <div *ngIf="formCtrl.hasError('required')" class="red-error">
+     Please Fill the field
+    </div>
+    <div *ngIf="formCtrl.hasError('pattern')" class="red-error">
+      {{ pattern }}
+    </div>
+  </div>

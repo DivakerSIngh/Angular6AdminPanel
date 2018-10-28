@@ -1,0 +1,24 @@
+.createDiv{
+
+    background: white;
+    padding: 35px;
+    box-shadow: 1px 1px 5px 5px #00000029;
+}
+
+.createRole{
+
+    background: white;
+    padding: 35px;
+    box-shadow: 1px 1px 5px 5px #00000029;
+}
+.per{
+
+    margin-left: 30px;
+}
+
+.btnDiv{
+    text-align: center;
+    padding: 25px;
+    float: right;
+    margin-right: 28px;
+}

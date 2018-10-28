@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VendorComponent } from './vendor.component';
+import { AddSubadminComponent } from './add-subadmin.component';
 
-describe('VendorComponent', () => {
-  let component: VendorComponent;
-  let fixture: ComponentFixture<VendorComponent>;
+describe('AddSubadminComponent', () => {
+  let component: AddSubadminComponent;
+  let fixture: ComponentFixture<AddSubadminComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VendorComponent ]
+      declarations: [ AddSubadminComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VendorComponent);
+    fixture = TestBed.createComponent(AddSubadminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

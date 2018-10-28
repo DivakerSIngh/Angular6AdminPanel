@@ -1,17 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-
-//import { SharedModule } from './modules/shared/shared.module';
-import { HttpClientModule } from '@angular/common/http'; 
-import { LoginAuthGuard } from './services/login-auth-guard';
-
-
-// import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { CommonModule } from '@angular/common';
+import { SubadminListComponent } from './subadmin-list/subadmin-list.component';
+import { AddSubadminComponent } from './add-subadmin/add-subadmin.component';
+import { SubAdminRoutingModule } from './sub-admin-routing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -52,22 +44,10 @@ import {
 } from '@angular/material';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
-
-import { LoaderService } from "./services/loader.service";
-
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    
-    
-  ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    //SharedModule,
-    HttpClientModule,
+    CommonModule,
+    SubAdminRoutingModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -103,15 +83,8 @@ import { LoaderService } from "./services/loader.service";
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule,
-    ScrollingModule,
-  BrowserAnimationsModule
-  
-  
-  
-    
+    MatTreeModule,FormsModule, ReactiveFormsModule
   ],
-  providers: [LoginAuthGuard,LoaderService],
-  bootstrap: [AppComponent]
+  declarations: [SubadminListComponent, AddSubadminComponent]
 })
-export class AppModule { }
+export class SubadminModule { }

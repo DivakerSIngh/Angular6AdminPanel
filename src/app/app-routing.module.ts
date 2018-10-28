@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginAuthGuard } from './services/login-auth-guard';
 
 
 const appRoutes: Routes = [
@@ -11,7 +12,8 @@ const appRoutes: Routes = [
   {
     //path: 'dashboard', canActivate: [DashboardGuard],
     path: '',
-    loadChildren: './modules/startup/startup.module#StartupModule'
+    loadChildren: './modules/startup/startup.module#StartupModule',
+    canActivate:[LoginAuthGuard]
   },
 ];
 

@@ -1,0 +1,98 @@
+<div class="col-md-12 mainWrrapper">
+    <div class="card wrapper">
+        <div class="header" class="col-sm-12">
+            <h4 class="title">User Details</h4>                           
+        </div>
+        <form>
+          <div class="row">
+              <div class="col-md-3">
+              <img class="profile-img" [src]="accountDetails.profileImage"  alt="..."/>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Name</mat-label>
+                    <input [disabled]="true" [value]="accountDetails.name" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Email</mat-label>
+                    <input [disabled]="true" [value]="accountDetails.email" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>DOB</mat-label>
+                    <input [disabled]="true" [value]="accountDetails.dob | date" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Gender</mat-label>
+                    <input [disabled]="true" [value]="accountDetails.female=='true'?'Female':'Male'" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Relation Ship</mat-label>
+                    <input [disabled]="true" [value]="accountDetails.relationshipStatus" matInput placeholder="Name"  >
+                    <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
+             </mat-form-field>
+            </div>
+
+            <div class="col-md-3">
+                <!-- <mat-form-field appearance="legacy">
+                    <mat-label>Interested In</mat-label>
+                    <input  [disabled]="true" [value]="accountDetails.relationshipStatus" matInput placeholder="Name"  >
+             </mat-form-field> -->
+            
+             <span>
+                Interested In
+             </span><br>
+             <span  *ngFor="let item of accountDetails.interst;" >
+                   {{item}},
+             </span>
+            
+            </div>
+          </div>
+            <!-- <div class="row">
+                <div class="col-md-3">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Name</mat-label>
+                        <input [disabled]="true" [value]="name" matInput placeholder="Name"  >
+                        <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon>
+                 </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Name</mat-label>
+                        <input [disabled]="true" [value]="name" matInput placeholder="Name"  >
+                        <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon>
+                 </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Name</mat-label>
+                        <input [disabled]="true" [value]="name" matInput placeholder="Name"  >
+                        <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon>
+                 </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Name</mat-label>
+                        <input [disabled]="true" [value]="name" matInput placeholder="Name"  >
+                        <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon>
+                 </mat-form-field>
+                </div>
+            </div> -->
+        </form>
+        </div>
+        <div>
+            <button mat-stroked-button  routerLink="/home/account">Go Back</button>
+        </div>
+      </div>
+

@@ -3,7 +3,7 @@
     <aside class="bg-primary aside-sm nav-off-screen" id="nav">
         <section class="vbox">
             <header class="dker nav-bar nav-bar-fixed-top">
-                <a href="#" class="nav-brand">
+                <a routerLink="/home" class="nav-brand">
                     <img src="../../../../../assets/images/logo-vert.png  ">
                 </a>
             </header>
@@ -31,43 +31,43 @@
                                 <span>Dashboard</span> 
                             </a>
                         </li>
-                        <li class=" ">
+                        <li class=" " *ngIf="isPermission('accounts')">
                             <a routerLink="/home/account" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico8.png">  
                                 <span>Accounts</span> 
                             </a>
                         </li>
-                        <li class=" ">
+                        <li class="" *ngIf="isPermission('vendors')">
                             <a routerLink="/home/vendor" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico6.png">  
                                 <span>Vendor</span> 
                             </a>
                         </li>
-                        <li class=" ">
+                        <li class=" " *ngIf="isPermission('support')">
                             <a routerLink="/home/support" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico5.png">  
                                 <span>Support</span> 
                             </a>
                         </li>
-                        <li class=" ">
+                        <!-- <li>
                             <a routerLink="/home/question" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico4.png">  
                                 <span>Questions</span> 
                             </a>
-                        </li>
-                        <li >
+                        </li> -->
+                        <li  *ngIf="isPermission('ads')">
                             <a routerLink="/home/ads" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico3.png">  
                                 <span>Ads</span> 
                             </a>
                         </li>
-                        <li class=" ">
+                        <!-- <li  *ngIf="isPermission('cms')">
                             <a routerLink="/home/cms" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico2.png">  
                                 <span>CMS</span> 
                             </a>
-                        </li>
-                        <li class=" ">
+                        </li> -->
+                        <li  *ngIf="isPermission('users')">
                             <a routerLink="/home/users" [routerLinkActive]="['active']"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico1.png"> 
                                 <span>Admin Users</span> 

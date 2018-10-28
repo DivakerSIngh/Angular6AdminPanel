@@ -1,0 +1,77 @@
+
+<section class="scrollable wrapper">
+    <div class="displayiblock width100">
+        <div class="page-wrapper"> 
+            <h1 class="page-heading">Add Users</h1>
+            <div class="search-bar-opt">
+            </div>
+           <div class="col-sm-12">
+<div class="col-sm-6">
+  <div class="createDiv">
+    <div class="example-container" class="">
+        <mat-form-field>
+          <input matInput placeholder="Name" [(ngModel)]="subadminObject.name">
+        </mat-form-field>    
+       </div>
+       <div class="example-container" class="">
+          <mat-form-field>
+              <input matInput placeholder="Email"  [(ngModel)]="subadminObject.email">
+            </mat-form-field>    
+      </div>
+      <div class="example-container" class="">
+          <mat-form-field>
+              <input matInput placeholder="Phone"  [(ngModel)]="subadminObject.phone">
+            </mat-form-field>    
+      </div>
+      <div class="example-container" class="">
+          <mat-form-field>
+              <input matInput placeholder="Password"  [(ngModel)]="subadminObject.password">
+            </mat-form-field>    
+      </div>
+    </div>
+</div>
+
+<div class="col-sm-6">
+    <div class="createDiv">
+      <div class="example-container" class="">
+          <mat-checkbox [(ngModel)]="subadminObject.dashBoard">Dashboard</mat-checkbox>
+         </div>
+         <div class="example-container" class="">
+            <mat-checkbox [(ngModel)]="subadminObject.accounts">Account</mat-checkbox>  
+        </div>
+        <div class="example-container" class="">
+            <mat-checkbox [(ngModel)]="subadminObject.vendors">Vendor</mat-checkbox>     
+        </div>
+        <div class="example-container" class="">
+            <mat-checkbox [(ngModel)]="subadminObject.support">Support</mat-checkbox>      
+        </div>
+        <div class="example-container" class="">
+            <mat-checkbox [(ngModel)]="subadminObject.ads">Ads</mat-checkbox>      
+        </div>
+        <div class="example-container" class="">
+            <mat-checkbox [(ngModel)]="subadminObject.cms">Cms</mat-checkbox>      
+        </div>
+        <div class="example-container" class="">
+            <mat-checkbox > Admin User</mat-checkbox>      
+        </div>
+       
+        <div class="example-container" class="per">
+            <mat-checkbox>Add</mat-checkbox> &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-checkbox>View</mat-checkbox> &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-checkbox>Edit</mat-checkbox> &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-checkbox>Delete</mat-checkbox> 
+           
+        </div>
+       
+      </div>
+  </div>
+           </div>
+          
+        </div>
+      
+    </div>
+    <div class="btnDiv"> 
+        <button mat-stroked-button color="primary" >Save</button>&nbsp;&nbsp;
+        <button mat-stroked-button>Go Back</button>
+     </div>
+</section>
