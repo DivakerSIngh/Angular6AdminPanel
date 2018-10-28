@@ -11,14 +11,23 @@
                 <!-- user -->
                 <div class=" nav-user pos-rlt">
                     <div class="nav-avatar pos-rlt">
-                        <a href="#" class="thumb-sm avatar" data-toggle="dropdown"> 
+                            <button mat-button [matMenuTriggerFor]="menuleft" class="nav-userbtn">
+                                    <img src="../../../../../assets/images/avatar.jpg" alt="" class="profile-img"> Adminas
+                                    <span class="caret"></span> 
+                            </button>
+                            <mat-menu #menuleft="matMenu">
+                              <button mat-menu-item routerLink="/home/account/profile">Setting</button>
+                              <button mat-menu-item routerLink="/home/account/changepassword">Change Password</button>
+                            </mat-menu>
+
+                        <!-- <a href="#" class="thumb-sm avatar" data-toggle="dropdown"> 
                             <img src="../../../../../assets/images/avatar.jpg" alt="" class=""> Admin
                             <span class="caret"></span> 
-                        </a>
-                        <ul class="dropdown-menu m-t-sm animated fadeInLeft"> <span class="arrow top"></span>
+                        </a> -->
+                        <!-- <ul class="dropdown-menu m-t-sm animated fadeInLeft"> <span class="arrow top"></span>
                             <li> <a href="#">Settings</a> </li>
                             <li> <a href="profile.html">Profile</a> </li>  
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <!-- / user -->
@@ -86,15 +95,13 @@
     <section id="content">
         <section class="vbox">
             <header class="header bg-white b-b displayiblock width100 ">
-                    <a class="btn btn-link btn-menu" data-toggle="class:nav-off-screen" data-target="#nav"> 
-                        <i class="fa fa-bars"></i> 
-                    </a>
-                    <a class="btn btn-link btn-menu-set"> 
-                        <i class="fas fa-cog"></i>
-                    </a>
-                    <a class="btn btn-link btn-menu-set"> 
-                        <i class="fas fa-sign-out-alt"></i> 
-                    </a>
+
+                    <button mat-button [matMenuTriggerFor]="menu" class="nav-userbtn-setting">
+                            <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item  (click)="logOut()">Sign Out</button>
+                    </mat-menu>
             </header>
             <router-outlet></router-outlet>
         </section>

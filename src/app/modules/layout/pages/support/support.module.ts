@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AccountRoutingModule } from './account-routing.module';
-import { ListComponent } from './list/list.component';
-import { DetailsComponent } from './details/details.component';
+
+import { SupportRoutingModule } from './support-routing.module';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -42,12 +41,16 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
-import { ProfileComponent } from './profile/profile.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { Errors } from '../../../shared/error-class';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SupportListComponent } from './support-list/support-list.component';
+import { ChatComponent } from './chat/chat.component';
+
 @NgModule({
   imports: [
     CommonModule,
-    AccountRoutingModule,
+    SupportRoutingModule,
     MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
@@ -83,8 +86,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-  MatFormFieldModule,FormsModule, ReactiveFormsModule
+  MatFormFieldModule,
+  FormsModule, ReactiveFormsModule
   ],
-  declarations: [ListComponent, DetailsComponent, ProfileComponent, ChangePasswordComponent]
+  declarations: [SupportListComponent, ChatComponent]
 })
-export class AccountModule { }
+export class SupportModule { }

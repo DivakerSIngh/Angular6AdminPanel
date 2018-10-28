@@ -43,9 +43,11 @@ import {
   MatFormFieldModule
 } from '@angular/material';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { Errors } from '../../../shared/error-class';
 
 @NgModule({
   imports: [
+    
     CommonModule,
     SubAdminRoutingModule,
     MatAutocompleteModule,
@@ -84,7 +86,9 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,FormsModule, ReactiveFormsModule
+    
   ],
+  providers: [],
   declarations: [SubadminListComponent, AddSubadminComponent]
 })
 export class SubadminModule { }

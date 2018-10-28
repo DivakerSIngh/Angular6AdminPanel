@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-leftmenu',
@@ -8,13 +9,10 @@ import { JsonPipe } from '@angular/common';
 })
 export class LeftmenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute,private router:Router) { }
 
    menuArray: MenuClass[];
   ngOnInit() {
-    debugger
-    //var userAccess=JSON.parse(localStorage.getItem('user-access'));
-
   }
 
   isPermission(name){
@@ -25,6 +23,11 @@ export class LeftmenuComponent implements OnInit {
    }else if(userAccess["role"]!="sub-admin"){
     return true;
    }
+  }
+
+  logOut() {
+    localStorage.clear()   
+    this.router.navigate(['/login'])
   }
 
 }

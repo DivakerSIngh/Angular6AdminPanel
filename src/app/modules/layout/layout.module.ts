@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { SupportComponent } from './pages/support/support.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { AdsComponent } from './pages/ads/ads.component';
 import { CmsComponent } from './pages/cms/cms.component';
@@ -92,6 +91,6 @@ import {
   MatTreeModule,
   MatFormFieldModule,FormsModule, ReactiveFormsModule
   ],
-  declarations: [DashboardComponent, SupportComponent, QuestionComponent, AdsComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent]
+  declarations: [DashboardComponent, QuestionComponent, AdsComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent]
 })
 export class LayoutModule { }

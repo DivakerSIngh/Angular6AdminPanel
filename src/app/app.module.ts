@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 //import { SharedModule } from './modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http'; 
-import { LoginAuthGuard } from './services/login-auth-guard';
+import { LoginAuthGuard,AuthGuard } from './services/login-auth-guard';
 
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -111,7 +111,7 @@ import { LoaderService } from "./services/loader.service";
   
     
   ],
-  providers: [LoginAuthGuard,LoaderService],
+  providers: [LoginAuthGuard,AuthGuard,LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

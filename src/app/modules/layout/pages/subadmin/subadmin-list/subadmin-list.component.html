@@ -1,28 +1,18 @@
 <div class="col-md-12 mainWrrapper">
     <div class="card wrapper">
-        <div class="header" class="col-sm-4">
+        <div class="header" class="col-sm-12">
             <h4 class="title">Sub Admin List
 
-               
+                <a mat-stroked-button class="a-btn"  routerLink="add">New SubAdmin</a>
             </h4>
-                  <mat-form-field appearance="legacy">
-                        <mat-label>Search</mat-label>
-                        <input [disabled]="true" matInput placeholder="Placeholder" [(ngModel)]="searchObject.search"   (keyup.enter)="search(searchObject)">
-                        <mat-icon matSuffix (click)="search(searchObject)"><i  class="fa fa-search"></i></mat-icon>
-                 </mat-form-field>
-
-                 
-           
         </div>
-        <div class="header" class="col-sm-8">
-            <button mat-stroked-button color="primary"  routerLink="add">New SubAdmin</button>
-        </div>
+      
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
                 <thead>
                     <th>S.No.</th>
                     <th>Name</th>
-                    <th>Dob</th>
+                   
                     <th>Email</th>
                     <th>Created Date</th>
                     <th>Action</th>
@@ -31,9 +21,8 @@
                     <tr *ngFor="let item of adminUsers;let i=index;">
                         <td>{{i+1}}</td>
                         <td>{{item.name}}</td>
-                        <td>{{item.dob | date}}</td>
                         <td>{{item.email}}</td>
-                        <td>{{item.updated | date}}</td>
+                        <td>{{item.created | date}}</td>
                         <td>
                               <a [ngClass]="item.active==0?'deact':'act'" class="ttd-linker" (click)="enableDisable(item._id,item.active)"><i  class="far fa-times-circle"></i>  </a>
                                &nbsp; &nbsp; 

@@ -32,12 +32,22 @@ export class SubadminListComponent implements OnInit {
   }
 
   getAllSubadmin(){
-    var url="limit="+this.searchObject.limit+"&search="+this.searchObject.search+"&plans="+this.searchObject.plans+"";
-    var result = this.http.httpGet(constants.getAllAdminUsers+url);
+    //var url="limit="+this.searchObject.limit+"&search="+this.searchObject.search+"&plans="+this.searchObject.plans+""; phone
+    var json={"email":localStorage.getItem('email'),"name":localStorage.getItem('name'),"phone":localStorage.getItem('phone')};
+    var result = this.http.httpPost(constants.getAllAdminUsers,json);
     result.subscribe((response) => {
-      
+      debugger
       console.log('subadminlist',response.data)
       this.adminUsers=response.data;
+    })
+  }
+
+  delete(id){
+    var json={"adminId":id}
+    var result = this.http.httpPost(constants.deleteSubadmin,json);
+    result.subscribe((response) => {
+      this.openSnackBar(response.message);
+      this.getAllSubadmin();
     })
   }
 

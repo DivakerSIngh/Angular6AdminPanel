@@ -1,5 +1,8 @@
 
 <section class="scrollable wrapper">
+  <form [formGroup]="userForm" (ngSubmit)="save(userForm.value)"  novalidate>
+
+  
     <div class="displayiblock width100">
         <div class="page-wrapper"> 
             <h1 class="page-heading">Add Users</h1>
@@ -8,24 +11,36 @@
            <div class="col-sm-12">
 <div class="col-sm-6">
   <div class="createDiv">
-    <div class="example-container" class="">
+    <div class="example-container" class="">  
         <mat-form-field>
-          <input matInput placeholder="Name" [(ngModel)]="subadminObject.name">
+            <input matInput placeholder="Full Name" formControlName="name" required>
+            <mat-error *ngFor="let validation of validationMessage.name">
+                <mat-error class="error-message" *ngIf="userForm.get('name').hasError(validation.type) && (userForm.get('name').dirty || userForm.get('name').touched)">{{validation.message}}</mat-error>
+            </mat-error>
         </mat-form-field>    
        </div>
        <div class="example-container" class="">
           <mat-form-field>
-              <input matInput placeholder="Email"  [(ngModel)]="subadminObject.email">
+              <input matInput placeholder="Email" formControlName="email" required>
+              <mat-error *ngFor="let validation of validationMessage.email">
+                  <mat-error class="error-message" *ngIf="userForm.get('email').hasError(validation.type) && (userForm.get('email').dirty || userForm.get('email').touched)">{{validation.message}}</mat-error>
+              </mat-error>
             </mat-form-field>    
       </div>
       <div class="example-container" class="">
           <mat-form-field>
-              <input matInput placeholder="Phone"  [(ngModel)]="subadminObject.phone">
+              <input matInput placeholder="Phone" minlength="9" maxlength="10" formControlName="phone" required>
+              <mat-error *ngFor="let validation of validationMessage.phone">
+                  <mat-error class="error-message" *ngIf="userForm.get('phone').hasError(validation.type) && (userForm.get('phone').dirty || userForm.get('phone').touched)">{{validation.message}}</mat-error>
+              </mat-error>
             </mat-form-field>    
       </div>
       <div class="example-container" class="">
           <mat-form-field>
-              <input matInput placeholder="Password"  [(ngModel)]="subadminObject.password">
+              <input type="password" minlength="9" maxlength="10" matInput placeholder="Password" formControlName="password" required>
+              <mat-error *ngFor="let validation of validationMessage.password">
+                  <mat-error class="error-message" *ngIf="userForm.get('password').hasError(validation.type) && (userForm.get('password').dirty || userForm.get('password').touched)">{{validation.message}}</mat-error>
+              </mat-error>
             </mat-form-field>    
       </div>
     </div>
@@ -34,25 +49,25 @@
 <div class="col-sm-6">
     <div class="createDiv">
       <div class="example-container" class="">
-          <mat-checkbox [(ngModel)]="subadminObject.dashBoard">Dashboard</mat-checkbox>
+          <mat-checkbox  formControlName="dashBoard">Dashboard</mat-checkbox>
          </div>
          <div class="example-container" class="">
-            <mat-checkbox [(ngModel)]="subadminObject.accounts">Account</mat-checkbox>  
+            <mat-checkbox  formControlName="accounts">Account</mat-checkbox>  
         </div>
         <div class="example-container" class="">
-            <mat-checkbox [(ngModel)]="subadminObject.vendors">Vendor</mat-checkbox>     
+            <mat-checkbox  formControlName="vendors">Vendor</mat-checkbox>     
         </div>
         <div class="example-container" class="">
-            <mat-checkbox [(ngModel)]="subadminObject.support">Support</mat-checkbox>      
+            <mat-checkbox  formControlName="support">Support</mat-checkbox>      
         </div>
         <div class="example-container" class="">
-            <mat-checkbox [(ngModel)]="subadminObject.ads">Ads</mat-checkbox>      
+            <mat-checkbox  formControlName="ads" >Ads</mat-checkbox>      
         </div>
         <div class="example-container" class="">
-            <mat-checkbox [(ngModel)]="subadminObject.cms">Cms</mat-checkbox>      
+            <mat-checkbox  formControlName="cms">Cms</mat-checkbox>      
         </div>
-        <div class="example-container" class="">
-            <mat-checkbox > Admin User</mat-checkbox>      
+        <!-- <div class="example-container" class="">
+            <mat-checkbox [(ngModel)]="subadminObject.dashBoard" > Admin User</mat-checkbox>      
         </div>
        
         <div class="example-container" class="per">
@@ -60,8 +75,7 @@
             <mat-checkbox>View</mat-checkbox> &nbsp;&nbsp;&nbsp;&nbsp;
             <mat-checkbox>Edit</mat-checkbox> &nbsp;&nbsp;&nbsp;&nbsp;
             <mat-checkbox>Delete</mat-checkbox> 
-           
-        </div>
+        </div> -->
        
       </div>
   </div>
@@ -71,7 +85,9 @@
       
     </div>
     <div class="btnDiv"> 
-        <button mat-stroked-button color="primary" >Save</button>&nbsp;&nbsp;
+      <input type="submit" [disabled]="!userForm.valid"  mat-stroked-button color="primary" value="Save" />
+        <!-- <button mat-stroked-button color="primary" type="submit" >Save</button>&nbsp;&nbsp; -->
         <button mat-stroked-button>Go Back</button>
      </div>
+    </form>
 </section>

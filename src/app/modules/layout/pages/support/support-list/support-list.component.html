@@ -7,11 +7,15 @@
                         <input  matInput placeholder="Placeholder" [(ngModel)]="searchObject.search"   (keyup.enter)="search(searchObject)">
                         <mat-icon matSuffix (click)="search(searchObject)"><i  class="fa fa-search"></i></mat-icon>
                  </mat-form-field>
+           
         </div>
-        <div  class="col-sm-4 headerfilter">
+        <div  class="col-sm-8 headerfilter">
             <mat-radio-group>
-                <mat-radio-button value="1">All Account</mat-radio-button> &nbsp;&nbsp;
-                <mat-radio-button value="2">Subscription</mat-radio-button>
+                <mat-radio-button value="1">All</mat-radio-button> &nbsp;&nbsp;
+                <mat-radio-button value="2">High</mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button value="3">Medium</mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button value="4">Low</mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button value="5">Closed</mat-radio-button>&nbsp;&nbsp;
               </mat-radio-group>
         </div>
         <div class="content table-responsive table-full-width">
@@ -25,22 +29,24 @@
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of adminUsers;let i=index;">
+                    <tr *ngFor="let item of supportList;let i=index;">
                         <td>{{i+1}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.email}}</td>
                         <td>{{item.created | date}}</td>
                         <td>{{item.created | date}}</td>
                         <td>
-                              <a [ngClass]="item.active==0?'deact':'act'" class="ttd-linker" (click)="enableDisableAccount(item._id,item.active)"><i  class="far fa-times-circle"></i>  </a>
+                              <a [ngClass]="item.active==0?'deact1':'act1'" class="ttd-linker" (click)="enableDisableAccount(item._id,item.active)">
+                                <i  [ngClass]="item.active==0?'fa fa-location-arrow':'fa fa-times'" ></i>{{item.active==0?'Reopen':'Close'}}
+                               </a>
                                &nbsp; &nbsp; 
-                               <a  class="ttd-linker" [routerLink]="['details',item._id]"><i  class="far far fa-eye"></i>  </a> 
+                               <a  class="ttd-linker" [routerLink]="['details',item._id]"><i  class="fa fa-reply"></i> Reply  </a> 
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <tfoot *ngIf="adminUsers">
-        <mat-paginator [length]="adminUsers.length"
+            <tfoot *ngIf="supportList">
+        <mat-paginator [length]="supportList.length"
                     [pageSize]="10"
                     [pageSizeOptions]="[5, 10, 25, 100]"  (page)="getNext($event)">
       </mat-paginator>

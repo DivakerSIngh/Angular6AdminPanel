@@ -8,8 +8,8 @@ import { CmsComponent } from '../cms/cms.component';
 const routes: Routes = [
   {
     path: '',  component:SubadminListComponent},
-    {path: 'add',  component:AddSubadminComponent,
-  }
+    {path: 'add',  component:AddSubadminComponent},
+    {path: 'add/:id',  component:AddSubadminComponent}
 ];
 
 @NgModule({
