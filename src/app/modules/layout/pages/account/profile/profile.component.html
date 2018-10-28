@@ -1,3 +1,50 @@
-<p>
-  profile works!
-</p>
+
+<section class="scrollable wrapper">
+    <form [formGroup]="userForm" (ngSubmit)="update(userForm.value)"  novalidate>
+      <div class="displayiblock width70 card">
+          <div class="page-wrapper"> 
+              <h1 class="page-heading">Profile</h1>
+              <div class="search-bar-opt">
+              </div>
+             <div class="col-sm-12">
+  <div class="col-sm-12">
+    <div class="createDiv">
+      <div class="example-container" class="">  
+          <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name" required>
+              <mat-error *ngFor="let validation of validationMessage.name">
+                  <mat-error class="error-message" *ngIf="userForm.get('name').hasError(validation.type) && (userForm.get('name').dirty || userForm.get('name').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+          </mat-form-field>    
+         </div>
+         <div class="example-container" class="">
+            <mat-form-field>
+                <input matInput  placeholder="Email" formControlName="email" required>
+                <mat-error *ngFor="let validation of validationMessage.email">
+                    <mat-error class="error-message" *ngIf="userForm.get('email').hasError(validation.type) && (userForm.get('email').dirty || userForm.get('email').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+              </mat-form-field>    
+        </div>
+        <div class="example-container" class="">
+            <mat-form-field>
+                <input matInput  placeholder="Phone No" formControlName="phone" required>
+                <mat-error *ngFor="let validation of validationMessage.phone">
+                    <mat-error class="error-message" *ngIf="userForm.get('phone').hasError(validation.type) && (userForm.get('phone').dirty || userForm.get('phone').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+              </mat-form-field>    
+        </div>
+       
+      </div>
+      <div class="btnDiv"> 
+          <button type="button" mat-raised-button color="" routerLink="/home/account">Go Back</button>&nbsp;&nbsp;
+          <button type="submit" [disabled]="!userForm.valid" mat-raised-button color="primary">Save</button>
+         </div>
+  </div>
+             </div>
+            
+          </div>
+        
+      </div>
+    
+      </form>
+  </section>

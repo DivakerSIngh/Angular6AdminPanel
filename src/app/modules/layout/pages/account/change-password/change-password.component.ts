@@ -22,9 +22,10 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   changePassword(obj) {
+    
     var json={"oldPassword":obj.oldPassword,"newPassword":obj.password}
     this.http.httpPost(constants.changePassword, json).subscribe(() => {
-      debugger
+      
 
     })
 
