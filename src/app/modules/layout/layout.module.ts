@@ -49,8 +49,8 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
-import { AdslistComponent } from './pages/adslist/adslist.component';
-import { AdsDetailsComponent } from './pages/ads-details/ads-details.component';
+// import { AdslistComponent } from './pages/adslist/adslist.component';
+// import { AdsDetailsComponent } from './pages/ads-details/ads-details.component';
 
 @NgModule({
   imports: [
@@ -93,6 +93,6 @@ import { AdsDetailsComponent } from './pages/ads-details/ads-details.component';
   MatTreeModule,
   MatFormFieldModule,FormsModule, ReactiveFormsModule
   ],
-  declarations: [DashboardComponent, QuestionComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent, AdslistComponent, AdsDetailsComponent]
+  declarations: [DashboardComponent, QuestionComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent]
 })
 export class LayoutModule { }

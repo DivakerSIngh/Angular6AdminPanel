@@ -40,6 +40,8 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
+import { AdslistComponent } from './adslist/adslist.component';
+import { AdsDetailsComponent } from './ads-details/ads-details.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -81,6 +83,6 @@ import {
     MatTreeModule,
     MatFormFieldModule,FormsModule, ReactiveFormsModule
   ],
-  declarations: []
+  declarations: [AdslistComponent, AdsDetailsComponent]
 })
 export class AdsModule { }

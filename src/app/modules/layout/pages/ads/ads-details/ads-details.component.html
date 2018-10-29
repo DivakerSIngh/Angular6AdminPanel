@@ -1,0 +1,36 @@
+<div class="col-md-12 mainWrrapper">
+  <div class="card wrapper">
+      <div class="header" class="col-sm-12">
+          <h4 class="title">User Details</h4>                           
+      </div>
+      <form>
+        <div class="row">
+            <div class="col-md-3">
+            <img class="profile-img" [src]="venderDetails.profileImage"  alt="..." style="height:100px;width:100px"/>
+          </div>
+          <div class="col-md-3">
+              <mat-form-field appearance="legacy">
+                  <mat-label>Name</mat-label>
+                  <input [disabled]="true" [value]="venderDetails.name" matInput placeholder="Name"  >
+           </mat-form-field>
+          </div>
+          <div class="col-md-3">
+              <mat-form-field appearance="legacy">
+                  <mat-label>Email</mat-label>
+                  <input [disabled]="true" [value]="venderDetails.email" matInput placeholder="Name"  >
+           </mat-form-field>
+          </div>
+          <div class="col-md-3">
+              <mat-form-field appearance="legacy">
+                  <mat-label>Gender</mat-label>
+                  <input [disabled]="true" [value]="venderDetails.female=='true'?'Female':'Male'" matInput placeholder="Name"  >
+           </mat-form-field>
+          </div>
+        </div>
+      </form>
+      </div>
+      <div>
+          <button mat-stroked-button  routerLink="/home/ads">Go Back</button>
+      </div>
+    </div>
+

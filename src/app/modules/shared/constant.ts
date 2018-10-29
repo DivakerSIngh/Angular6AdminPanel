@@ -17,7 +17,10 @@ export const getSubadminById: string = 'admins/sub-admin-edit';
 export const getAllVendor: string = 'admins/vendor-list-admin?';
 export const vendorDetails: string = 'admins/vendor-info-admin?vendorId=';
 export const enableDisableVendor: string = 'admins/vendor-active-deactive';
-
+export const getAllAdd: string = 'admins/all-adds?';
+export const approveAddStatus: string = 'admins/approved-add?addId=';
+export const getVenderDetail: string = 'admins/vendor-info-admin?vendorId=';
+export const activeDeactiveVender: string = 'admins/vendor-active-deactive';
 
 
 
