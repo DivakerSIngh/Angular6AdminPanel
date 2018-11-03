@@ -19,7 +19,7 @@ export class ListComponent implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
-  adminUsers:any[];
+  adminUsers:any=[];
   
   searchObject = {
     limit:0,search:'',plans:"all"

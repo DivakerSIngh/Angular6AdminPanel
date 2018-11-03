@@ -12,7 +12,10 @@ export const accountUsersList: string = 'admins/user-list-admin?';
 export const enableDisableAccount: string = 'admins/user-active-deactive';
 export const accountDetails: string = 'admins/user-info-admin?userId=';
 export const addSubadmmin: string = 'admins/add-sub-admin';
-export const getSubadminById: string = 'admins/sub-admin-edit';
+export const updateAdmin: string = 'admins/sub-admin-edit';
+
+export const getSubadminById: string = 'admins/sub-admin-info?adminId=';
+
 
 export const getAllVendor: string = 'admins/vendor-list-admin?';
 export const vendorDetails: string = 'admins/vendor-info-admin?vendorId=';
@@ -21,6 +24,29 @@ export const getAllAdd: string = 'admins/all-adds?';
 export const approveAddStatus: string = 'admins/approved-add?addId=';
 export const getVenderDetail: string = 'admins/vendor-info-admin?vendorId=';
 export const activeDeactiveVender: string = 'admins/vendor-active-deactive';
+
+export const deleteAdd: string = 'admins/delete-ads';
+export const analyticsOfAdd: string = 'admins/add-analytics?addId=';
+export const allTicket: string = 'admins/all-ticket?';
+export const closeTicket: string = 'admins/closed-ticket-admin';
+export const reopenTicket: string = 'admins/reopen-ticket-admin';
+
+export const allConversation: string ="admins/admin-ticket-view?ticketId="
+export const postConversation: string ="admins/ticket-reply"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

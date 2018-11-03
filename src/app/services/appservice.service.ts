@@ -41,13 +41,13 @@ export class AppserviceService {
     return this.httpClient.post(environment.serverUrl + url, obj, {headers : httpOptions})
     .pipe(
       map((resp: any) => {
-        debugger
+        
         console.log("response", resp);
         this.loader.display(false);
         return resp;
   
       }), catchError( error => {
-        debugger
+        
         this.loader.display(false);
         this.openSnackBar(error.message);
         console.log("createOrder error",error );
@@ -68,13 +68,13 @@ export class AppserviceService {
     return this.httpClient.post(environment.serverUrl + url, obj, {headers : httpOptions})
     .pipe(
       map((resp: any) => {
-        debugger
+        
         console.log("response", resp);
         this.loader.display(false);
         return resp;
   
       }), catchError( error => {
-        debugger
+        
         this.loader.display(false);
         this.openSnackBar(error.message);
         console.log("createOrder error",error );

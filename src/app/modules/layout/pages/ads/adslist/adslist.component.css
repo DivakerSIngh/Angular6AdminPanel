@@ -1,0 +1,12 @@
+.clickanchor{
+cursor: pointer;
+text-decoration: underline;
+color: blue;
+}
+
+.pen{
+    /* color:green; */
+}
+.app{
+    color:green;
+}

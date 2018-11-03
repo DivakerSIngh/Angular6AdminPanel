@@ -16,12 +16,15 @@ export class AppComponent implements OnInit  {
     
   }
   ngOnInit(){
-    this.showLoader = false;
+    setTimeout(() => {
+      this.showLoader = false;
     this
     .loaderService
     .status
     .subscribe((val : boolean) => {
       this.showLoader = val;
     });
+    }, 500);
+    
   }
 }

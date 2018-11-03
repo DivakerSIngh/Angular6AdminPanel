@@ -9,7 +9,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  obj={
+    name:localStorage.getItem('name'),
+    email:localStorage.getItem('email'),
+    phone:localStorage.getItem('phone'),
+  }
   constructor(private http: AppserviceService) { }
 
   validationMessage = constants.validationMessage
@@ -19,6 +23,8 @@ export class ProfileComponent implements OnInit {
     phone: new FormControl('', [Validators.required])
   })
   ngOnInit() {
+
+
   }
 
   update(obj) {

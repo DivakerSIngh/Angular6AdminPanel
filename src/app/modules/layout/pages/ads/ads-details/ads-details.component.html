@@ -1,36 +1,54 @@
 <div class="col-md-12 mainWrrapper">
   <div class="card wrapper">
       <div class="header" class="col-sm-12">
-          <h4 class="title">User Details</h4>                           
+          <h4 class="title">Ads Details</h4>                           
       </div>
       <form>
         <div class="row">
             <div class="col-md-3">
-            <img class="profile-img" [src]="venderDetails.profileImage"  alt="..." style="height:100px;width:100px"/>
+            <img class="profile-img" [src]="analytics.image"  alt="..." style="height:100px;width:100px"/>
           </div>
           <div class="col-md-3">
               <mat-form-field appearance="legacy">
-                  <mat-label>Name</mat-label>
-                  <input [disabled]="true" [value]="venderDetails.name" matInput placeholder="Name"  >
+                  <mat-label>Min Range</mat-label>
+                  <input [disabled]="true" [value]="analytics.ageRangeMin" matInput placeholder="Min Range"  >
+           </mat-form-field>
+          </div>
+          <div class="col-md-3">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Max Range</mat-label>
+                    <input [disabled]="true" [value]="analytics.ageRangeMax" matInput placeholder="Max Range"  >
+             </mat-form-field>
+            </div>
+          <div class="col-md-3">
+              <mat-form-field appearance="legacy">
+                  <mat-label>Views</mat-label>
+                  <input [disabled]="true" [value]="analytics.views" matInput placeholder="Views"  >
            </mat-form-field>
           </div>
           <div class="col-md-3">
               <mat-form-field appearance="legacy">
-                  <mat-label>Email</mat-label>
-                  <input [disabled]="true" [value]="venderDetails.email" matInput placeholder="Name"  >
+                  <mat-label>likes</mat-label>
+                  <input [disabled]="true" [value]="analytics.likes" matInput placeholder="Likes"  >
            </mat-form-field>
           </div>
+
           <div class="col-md-3">
-              <mat-form-field appearance="legacy">
-                  <mat-label>Gender</mat-label>
-                  <input [disabled]="true" [value]="venderDetails.female=='true'?'Female':'Male'" matInput placeholder="Name"  >
-           </mat-form-field>
-          </div>
+                <!-- <mat-form-field appearance="legacy">
+                    <mat-label>Male looking For Age</mat-label>
+                    <input [disabled]="true" [value]="analytics.likes" matInput placeholder="Likes"  >
+             </mat-form-field> -->
+             <p>
+                    Male looking For Age  {{analytics.ageRangeMin}} searching for
+             </p>
+             <p>
+                  {{analytics.straightMen?'Straight':''}} &nbsp; {{analytics.bisexual?'Bisexual':''}}  of age range  {{analytics.ageRangeMin}} - {{analytics.ageRangeMax}}
+            </div>
         </div>
       </form>
       </div>
       <div>
-          <button mat-stroked-button  routerLink="/home/ads">Go Back</button>
+          <button mat-raised-button color="" routerLink="/home/ads">Go Back</button>
       </div>
     </div>
 

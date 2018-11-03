@@ -7,23 +7,26 @@ import {
   PageEvent,
   MatPaginator,
   MatSpinner,
-  MatSnackBar
+  MatSnackBar,
+  MatDialogRef,
+  MatDialog
 } from '@angular/material';
+import { ConfirmationBoxComponent } from '../../../component/confirmation-box/confirmation-box.component';
 @Component({
   selector: 'app-adslist',
   templateUrl: './adslist.component.html',
   styleUrls: ['./adslist.component.css']
 })
 export class AdslistComponent implements OnInit {
-
+  dialogRef: MatDialogRef<ConfirmationBoxComponent>;
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
-  adminUsers:any[];
+  adminUsers:any=[];
   
   searchObject = {
     limit:0,search:'',plans:"all"
   }
-  constructor(private http:AppserviceService,private snackBar:MatSnackBar) { }
+  constructor(private http:AppserviceService,private snackBar:MatSnackBar,public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getAllAdds();
@@ -46,24 +49,44 @@ export class AdslistComponent implements OnInit {
     let offset = event.pageSize * event.pageIndex;
   }
   ApproveStatus(Id){
-    debugger
-    var result = this.http.httpGet(constants.approveAddStatus+Id);
-    result.subscribe((response) => {
+    
+
+    this.dialogRef = this.dialog.open(ConfirmationBoxComponent, {
+      disableClose: false
+    });
+    this.dialogRef.componentInstance.title="Confirm";
+    this.dialogRef.componentInstance.confirmMessage="Are you sure want to approve ads!"
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+     this.http.httpGet(constants.approveAddStatus+Id).subscribe((response) => {
       this.openSnackBar(response.message);
       this.getAllAdds();
     })
   }
+})
+  }
   
-  enableDisableAccount(id,status){
+  enableDisableAdd(id,status){
     
-    if(status==0)status=1;else status=0;
+    this.dialogRef = this.dialog.open(ConfirmationBoxComponent, {
+      disableClose: false
+    });
+    this.dialogRef.componentInstance.title="Confirm";
+    this.dialogRef.componentInstance.confirmMessage="Are you sure want to delete this add!"
 
-    var json={"vendorId":id,"active":status};
-    var result = this.http.httpPost(constants.activeDeactiveVender,json);
-    result.subscribe((response) => {
-      this.openSnackBar(response.message);
-      this.getAllAdds();
+    this.dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        if(status==0)status=1;else status=0;
+
+        var json={"addId":id};
+         this.http.httpPost(constants.deleteAdd,json).subscribe((response) => {
+          this.openSnackBar(response.message);
+          this.getAllAdds();
+        })
+      }
     })
+    
   }
   openSnackBar(message: string) {
     this.snackBar.open(message, 'Close', {

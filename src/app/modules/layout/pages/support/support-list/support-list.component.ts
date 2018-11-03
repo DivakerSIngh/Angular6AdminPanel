@@ -19,31 +19,51 @@ export class SupportListComponent implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
-  supportList:any[];
-  
+  supportList:any=[];
+  totalCount=0;
   searchObject = {
     limit:0,search:'',plans:"all"
   }
   constructor(private http:AppserviceService,private snackBar:MatSnackBar) { }
 
   ngOnInit() {
-    this.getAllAccount();
+    this.getAll();
   }
 
-  getAllAccount(){
-    var url="limit="+this.searchObject.limit+"&search="+this.searchObject.search+"&plans="+this.searchObject.plans+"";
-    var result = this.http.httpGet(constants.accountUsersList+url);
+  getAll(){
+    var url="limit="+this.searchObject.limit+"&search="+this.searchObject.search+"&priority="+this.searchObject.plans+"";
+    var result = this.http.httpGet(constants.allTicket+url);
     result.subscribe((response) => {
       
       console.log('account',response.data)
         this.supportList=response.data;
+        this.totalCount=response.total
     })
   }
 
-  search(){
-    this.getAllAccount();
+  load(type){
+    
+this.getAll();
   }
 
+  search(){
+    this.getAll();
+  }
+
+  closeTicket(id,status,active){
+
+var url=constants.reopenTicket;
+if(status==0 && active==0){
+  url=constants.closeTicket;
+}
+    var json={"ticketId":id};
+    var result = this.http.httpPost(url,json);
+    result.subscribe((response) => {
+      this.openSnackBar(response.message);
+      this.getAll();
+    })
+
+  }
 
   getNext(event: PageEvent) {
     let offset = event.pageSize * event.pageIndex;
@@ -57,7 +77,7 @@ export class SupportListComponent implements OnInit {
     var result = this.http.httpPost(constants.enableDisableAccount,json);
     result.subscribe((response) => {
       this.openSnackBar(response.message);
-      this.getAllAccount();
+      this.getAll();
     })
   }
   openSnackBar(message: string) {

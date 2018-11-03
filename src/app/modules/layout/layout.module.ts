@@ -49,6 +49,7 @@ import {
   MatTreeModule,
   MatFormFieldModule
 } from '@angular/material';
+import { ConfirmationBoxComponent } from './component/confirmation-box/confirmation-box.component';
 // import { AdslistComponent } from './pages/adslist/adslist.component';
 // import { AdsDetailsComponent } from './pages/ads-details/ads-details.component';
 
@@ -93,6 +94,7 @@ import {
   MatTreeModule,
   MatFormFieldModule,FormsModule, ReactiveFormsModule
   ],
-  declarations: [DashboardComponent, QuestionComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent]
+  declarations: [DashboardComponent, QuestionComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent, ConfirmationBoxComponent],
+  entryComponents: [ConfirmationBoxComponent]
 })
 export class LayoutModule { }

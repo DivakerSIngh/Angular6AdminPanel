@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class="control-label">Email</label>
                     <div class="form-input-group">
-                        <input type="email" (keyup)="keyup($event)"   #refName required  formControlName="email"  class="form-control" autocomplete="off">
+                        <input type="email" (keyup)="keyup($event)" placeholder="Email"  #refName required  formControlName="email"  class="form-control" autocomplete="off">
                         <app-error [formCtrl]="userForm.get('email')" [pattern]="error.errors.validEmail"></app-error>
                         <i class="far fa-user"></i>
                     </div>

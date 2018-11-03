@@ -1,0 +1,19 @@
+<!-- <div>
+    <h3 md-dialog-title>{{title}}</h3>
+    <div md-dialog-content>{{confirmMessage}}</div>
+    <div md-dialog-actions>
+<button mat-raised-button color="" (click)="dialogRef.close(false)" class="btnCancel">CANCEL</button>
+      <button mat-raised-button color="primary" class="btnConfirm" (click)="dialogRef.close(true)">OK</button>
+     
+    </div>
+   </div> -->
+
+   <h1 mat-dialog-title>{{title}} </h1>
+<div mat-dialog-content>
+  <p>{{confirmMessage}}</p>
+
+</div>
+<div mat-dialog-actions>
+    <button  mat-raised-button color=""  (click)="dialogRef.close(false)" class="btnCancel">CANCEL</button>
+    <button mat-raised-button color="primary"  class="btnConfirm" (click)="dialogRef.close(true)">OK</button>
+</div>

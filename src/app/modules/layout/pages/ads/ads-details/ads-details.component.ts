@@ -10,7 +10,7 @@ import * as constants from '../../../../shared/constant';
 export class AdsDetailsComponent implements OnInit {
 
   id:string='';
-  venderDetails:{};
+  analytics:any={};
 
   constructor(private route:ActivatedRoute,private http:AppserviceService) { 
     this.id = this.route.snapshot.paramMap.get("id");
@@ -21,10 +21,10 @@ export class AdsDetailsComponent implements OnInit {
   }
 
   get(id){
-    debugger
-    var result = this.http.httpGet(constants.getVenderDetail+id);
+    
+    var result = this.http.httpGet(constants.analyticsOfAdd+id);
     result.subscribe((response) => {
-        this.venderDetails=response.data;
+        this.analytics=response.data;
     })
   }
 }

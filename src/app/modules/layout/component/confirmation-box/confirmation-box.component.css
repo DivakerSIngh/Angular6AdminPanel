@@ -1,0 +1,23 @@
+.btnConfirm{
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-weight: 100;
+    border-radius: 2px;
+    width: 86px;
+}
+.btnCancel{
+    /* background: #ec4f4f; */
+    padding: 0px;
+    float: right;
+    margin-left: 94px;
+    border: none;
+    color: black;
+    border-radius: 2px;
+    font-weight: 100;
+    width: 86px;
+}
+.divtercondition{
+    width: 1075px;
+    height: 500px;
+}

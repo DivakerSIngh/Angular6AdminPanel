@@ -11,7 +11,7 @@
     <div class="createDiv">
       <div class="example-container" class="">  
           <mat-form-field>
-              <input matInput placeholder="Name" formControlName="name" required>
+              <input matInput [(ngModel)]="obj.name"  placeholder="Name" formControlName="name" required>
               <mat-error *ngFor="let validation of validationMessage.name">
                   <mat-error class="error-message" *ngIf="userForm.get('name').hasError(validation.type) && (userForm.get('name').dirty || userForm.get('name').touched)">{{validation.message}}</mat-error>
               </mat-error>
@@ -19,7 +19,7 @@
          </div>
          <div class="example-container" class="">
             <mat-form-field>
-                <input matInput  placeholder="Email" formControlName="email" required>
+                <input matInput [(ngModel)]="obj.email"  placeholder="Email" formControlName="email" required>
                 <mat-error *ngFor="let validation of validationMessage.email">
                     <mat-error class="error-message" *ngIf="userForm.get('email').hasError(validation.type) && (userForm.get('email').dirty || userForm.get('email').touched)">{{validation.message}}</mat-error>
                 </mat-error>
@@ -27,7 +27,7 @@
         </div>
         <div class="example-container" class="">
             <mat-form-field>
-                <input matInput  placeholder="Phone No" formControlName="phone" required>
+                <input matInput [(ngModel)]="obj.phone"  placeholder="Phone No" formControlName="phone" required>
                 <mat-error *ngFor="let validation of validationMessage.phone">
                     <mat-error class="error-message" *ngIf="userForm.get('phone').hasError(validation.type) && (userForm.get('phone').dirty || userForm.get('phone').touched)">{{validation.message}}</mat-error>
                 </mat-error>

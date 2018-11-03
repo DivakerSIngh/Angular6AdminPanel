@@ -1,0 +1,112 @@
+.left{
+    float: left;
+    background: #8080803b;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    line-height: 14px;
+}
+
+.right{
+float: right;
+
+    background: #8080803b;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    line-height: 14px;
+}
+
+.img-profile{
+    height: 30px;
+    border-radius: 50%;
+}
+.chat-box{
+    display: block;
+    padding-left: 15px;
+}
+.chat-box li{
+    display: block;
+    position: relative;
+    margin: 7px 0px;
+}
+.chat-left{
+    width: 80%;
+    height: auto;
+    position: relative;
+    height: auto;
+    left: 0;
+    border: 1px solid #ccc;
+    padding: 6px;
+    padding-left: 100px;
+    border-radius: 15px;
+    background: #337ab7;
+    overflow: hidden;
+    color: #fff;
+    min-height: 87px;
+
+}
+.chat-right{
+    width: 80%;
+    height: auto;
+    position: relative;
+    height: auto;
+    right: 0;
+    border: 1px solid #ccc;
+    padding: 6px;
+    padding-right: 100px;
+    border-radius: 15px;
+    background: #5cb85c;
+    overflow: hidden;
+    color: #fff;
+    min-height: 87px;
+    text-align: right;
+    float: right;
+}
+.user-box{
+    position: absolute;
+    height: 100%;
+    width: 80px;
+    top: 0px;
+    padding: 6px;
+    background: #fff;
+}
+.chat-left .user-box{
+    left: 0;
+}
+.chat-right .user-box{
+    right: 0;
+}
+.user-box img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.user-box p{
+    color: #000;
+}
+.chat-left .date-chat{
+    position: absolute;
+    bottom: 2px;
+    left: 100px;
+    color: #fff;
+}
+.chat-right .date-chat{
+    position: absolute;
+    bottom: 2px;
+    right: 100px;
+    color: #fff;
+}
+.char-input{
+    height: 80px;
+    resize: none;
+    padding-right: 35px;
+}
+.chat-send{
+    position: absolute;
+    right: 21px;
+    top: 25px;
+    height: 80px;
+    width: 30px;
+    font-size: 24px;
+}

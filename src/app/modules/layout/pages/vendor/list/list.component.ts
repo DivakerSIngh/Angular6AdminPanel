@@ -53,7 +53,7 @@ export class ListComponent implements OnInit {
   }
 
   enableDisable(id,status){
-    debugger
+    
     if(status==0)status=1;else status=0;
     var json={"vendorId":id,"active":status};
     var result = this.http.httpPost(constants.enableDisableVendor,json);

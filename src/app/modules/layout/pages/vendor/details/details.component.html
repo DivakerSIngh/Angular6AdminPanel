@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-3">
                 <mat-form-field appearance="legacy">
-                    <mat-label>Staus</mat-label>
+                    <mat-label>Martial Staus</mat-label>
                     <input [disabled]="true" [value]="vendorDetails.married=='true'?'Married':'Single'" matInput placeholder="Name"  >
                     <!-- <mat-icon matSuffix ><i  class="fa fa-search"></i></mat-icon> -->
              </mat-form-field>
@@ -46,7 +46,7 @@
 
             <div class="col-md-3">
                 <mat-form-field appearance="legacy">
-                    <mat-label>Active</mat-label>
+                    <mat-label>Staus</mat-label>
                     <input  [disabled]="true" [value]="vendorDetails.active==1?'Active':'Deactive'" matInput placeholder="Name"  >
              </mat-form-field>
             
@@ -57,7 +57,7 @@
         </form>
         </div>
         <div>
-            <button mat-stroked-button  routerLink="/home/vendor">Go Back</button>
+            <button mat-raised-button color=""  routerLink="/home/vendor">Go Back</button>
         </div>
       </div>
 

@@ -1,3 +1,68 @@
-<p>
-  chat works!
-</p>
+
+
+    <div class="col-sm-12 card wrapper" style="padding: 21px; margin: 10px;" >
+        <div class="header" class="col-sm-12">
+
+            <a mat-raised-button color="" routerLink="/home/support" class="a-btn" routerLink="add">Go Back</a>
+            <a mat-raised-button color="primary" class="a-btn " style="float: right;" (click)="closeTicket(chatList._id,chatList.status,chatList.active)">Close Ticket</a>
+      
+          </div>
+      
+          
+      
+          <p style="text-align: center;">
+            {{chatList.title}} {{chatList.priority}}
+          </p>
+      
+          <p style="text-align: center;">
+            {{chatList.description}}
+          </p>
+          <hr>
+      <div class="col-sm-12">
+          <div class="col-sm-12">
+        <ul class="chat-box">
+          <li *ngFor="let item of chatList.conversation">
+            <div class="row">
+            <div [ngClass]="item.sender==1?'chat-left':'chat-right'">
+              <div class="user-box"><img src="../../../../../../assets/images/avatar_default.jpg" class="img-profile"><p>{{adminName}}</p></div>
+              {{item.message}} 
+              <span class="date-chat">{{item.created | date}}</span>
+            </div>
+          </div>
+          </li>
+        
+        </ul>
+        </div>
+
+        <div class="col-sm-12">
+            <textarea class="form-control char-input" placeholder="type message here" (keyup.enter)="postConversation(chatList._id)" [(ngModel)]="comment"></textarea>
+           <span class="chat-send"> <i class="fa fa-location-arrow" (click)="postConversation(chatList._id)"></i></span>
+          </div>
+
+
+        <!-- <div *ngFor="let item of chatList.conversation" class="col-sm-7" [ngClass]="item.sender==1?'left':'right'">
+         <div class="col-sm-2">
+            <img src="../../../../../../assets/images/avatar_default.jpg" class="img-profile"><br>
+            <p>{{adminName}}</p>
+         </div>
+         
+          <div  class="col-sm-5">
+              <h6>{{item.message}}</h6> 
+              <p>{{item.created | date}}</p>
+          </div>
+        </div>
+        <div class="col-sm-12">
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="type message here" (keyup.enter)="postConversation(chatList._id)" [(ngModel)]="comment">
+            <i class="fa fa-location-arrow" (click)="postConversation(chatList._id)"></i>
+          </div>
+          <div class="col-sm-4">
+            </div> -->
+      </div>
+
+    </div>
+
+
+
+<!-- </div> -->
