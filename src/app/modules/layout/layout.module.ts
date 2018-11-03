@@ -52,6 +52,12 @@ import {
 import { ConfirmationBoxComponent } from './component/confirmation-box/confirmation-box.component';
 // import { AdslistComponent } from './pages/adslist/adslist.component';
 // import { AdsDetailsComponent } from './pages/ads-details/ads-details.component';
+import { AgmCoreModule } from '@agm/core';
+import { ChartModule } from "angular-highcharts";
+
+
+
+
 
 @NgModule({
   imports: [
@@ -92,7 +98,11 @@ import { ConfirmationBoxComponent } from './component/confirmation-box/confirmat
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-  MatFormFieldModule,FormsModule, ReactiveFormsModule
+  MatFormFieldModule,FormsModule, ReactiveFormsModule,
+  AgmCoreModule.forRoot({
+    apiKey: 'AIzaSyCDaxE9p2gYHKVnEJ6AbN03m0dSPRMCccc'
+  }),
+  ChartModule
   ],
   declarations: [DashboardComponent, QuestionComponent, CmsComponent, LeftmenuComponent, ErrorComponent, PaginationComponent, ConfirmationBoxComponent],
   entryComponents: [ConfirmationBoxComponent]

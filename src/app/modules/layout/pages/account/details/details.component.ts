@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
   get(id){
     var result = this.http.httpGet(constants.accountDetails+id);
     result.subscribe((response) => {
-      
+      debugger
         this.accountDetails=response.data;
     })
   }
