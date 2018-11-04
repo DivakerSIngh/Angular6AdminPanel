@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   
 
   ngOnInit() {
-   this.bindChart()
+   //this.bindChart()
   }
 
   bindChart(){
@@ -30,12 +30,13 @@ export class DashboardComponent implements OnInit {
       xAxis: {
         categories: [1,2,3,4,5,6,7]
       },
-      series: [
-        {
-          name: 'User',
-         data: [{"name":"asdasdasd"},{"name":"asasdasd@yopmail.com"}]
-  }]
-  
+      series: [{
+        name: 'Jane',
+        data: [1, 0, 4]
+       }, { 
+        name: 'John',
+        data: [5, 7, 3]
+       }]
     })
   }
 

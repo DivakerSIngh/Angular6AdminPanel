@@ -24,7 +24,12 @@
           <li *ngFor="let item of chatList.conversation">
             <div class="row">
             <div [ngClass]="item.sender==1?'chat-left':'chat-right'">
-              <div class="user-box"><img src="../../../../../../assets/images/avatar_default.jpg" class="img-profile"><p>{{adminName}}</p></div>
+              <div  class="user-box">
+                  <img  *ngIf="item.sender==1" src="../../../../../../assets/images/avatar_default.jpg" class="img-profile">
+                  <img  *ngIf="item.sender==0" [src]="chatList.vendor.profileImage" class="img-profile">
+                <p *ngIf="item.sender==1">{{adminName}}</p>
+                <p *ngIf="item.sender==0">{{chatList.vendor.name}}</p>
+              </div>
               {{item.message}} 
               <span class="date-chat">{{item.created | date}}</span>
             </div>
@@ -39,26 +44,6 @@
            <span class="chat-send"> <i class="fa fa-location-arrow" (click)="postConversation(chatList._id)"></i></span>
           </div>
 
-
-        <!-- <div *ngFor="let item of chatList.conversation" class="col-sm-7" [ngClass]="item.sender==1?'left':'right'">
-         <div class="col-sm-2">
-            <img src="../../../../../../assets/images/avatar_default.jpg" class="img-profile"><br>
-            <p>{{adminName}}</p>
-         </div>
-         
-          <div  class="col-sm-5">
-              <h6>{{item.message}}</h6> 
-              <p>{{item.created | date}}</p>
-          </div>
-        </div>
-        <div class="col-sm-12">
-        </div>
-        <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="type message here" (keyup.enter)="postConversation(chatList._id)" [(ngModel)]="comment">
-            <i class="fa fa-location-arrow" (click)="postConversation(chatList._id)"></i>
-          </div>
-          <div class="col-sm-4">
-            </div> -->
       </div>
 
     </div>
