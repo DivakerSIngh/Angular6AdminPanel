@@ -24,8 +24,10 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "angular-highcharts": "^7.0.2",
+    "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
     "highcharts": "^6.2.0",
+    "ng2-charts": "^1.6.0",
     "rxjs": "^6.0.0",
     "save": "^2.3.2",
     "zone.js": "^0.8.26"

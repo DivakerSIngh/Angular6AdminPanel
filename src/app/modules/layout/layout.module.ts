@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeftmenuComponent } from './component/leftmenu/leftmenu.component';
 import { ErrorComponent } from './component/error/error.component';
 import { PaginationComponent } from './component/pagination/pagination.component';
+
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -98,6 +100,7 @@ import { ChartModule } from "angular-highcharts";
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
+  ChartsModule,
   MatFormFieldModule,FormsModule, ReactiveFormsModule,
   AgmCoreModule.forRoot({
     apiKey: 'AIzaSyCDaxE9p2gYHKVnEJ6AbN03m0dSPRMCccc'
