@@ -4,7 +4,7 @@
             <h4 class="title">Supports</h4>
                   <mat-form-field appearance="legacy"  *ngIf="supportList.length>0">
                         <mat-label>Search</mat-label>
-                        <input  matInput placeholder="Placeholder" [(ngModel)]="searchObject.search"   (keyup.enter)="search(searchObject)">
+                        <input  matInput placeholder="Search" [(ngModel)]="searchObject.search"   (keyup.enter)="search(searchObject)">
                         <mat-icon matSuffix (click)="search(searchObject)"><i  class="fa fa-search"></i></mat-icon>
                  </mat-form-field>
            
