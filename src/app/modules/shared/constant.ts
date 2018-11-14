@@ -2,6 +2,7 @@
 export const loginUrl: string = 'admins/admin-login';
 export const changePassword: string = 'admins/admin-change-password';
 export const logeditSettinginUrl: string = 'admins/admin-edit-setting';
+export const forgotpassword: string = 'admins/admin-login';
 
 export const getAllAdminUsers: string = 'admins/sub-admin-list';
 export const activeDeactiveAdmin: string = "admins/sub-admin-active-deactive"

@@ -14,12 +14,14 @@
                     Forgot Password
                 </span>
             </div>
-            <form action="#" class="panel-body">
+            <form class="panel-body" [formGroup]="userForm" (ngSubmit)="forgotPassword()" novalidate>
+
                 <div class="form-group">
                     <label class="control-label">Email</label>
                     <div class="form-input-group">
-                        <input type="email" placeholder="test@example.com" class="form-control">
-                        <i class="far fa-user"></i>
+                            <input type="email" (keyup)="keyup($event)" placeholder="test@example.com"  #refName required  formControlName="email"  class="form-control" autocomplete="off">
+                            <app-error [formCtrl]="userForm.get('email')" [pattern]="error.errors.validEmail"></app-error>
+                            <i class="far fa-user"></i>
                     </div>
                 </div>
                 <!-- <div class="form-group">
@@ -31,7 +33,8 @@
                 </div>   -->
                 
                 <div class="log_button displayiblock width100 text-center">
-                  <a routerLink="/dashboard" p class="btn btn-theme set-neg-marg">Submit</a>
+                        <button type="submit" class="btn btn-theme set-neg-marg">Submit</button>
+                        <!-- <a  (ngClick) ="" class="btn btn-theme set-neg-marg">Submit</a> -->
                 </div>
             </form>
         </section> 
