@@ -35,25 +35,29 @@
                 <nav class="nav-primary hidden-xs">
                     <ul class="nav">
                         <li>
-                            <a routerLink="/home"> 
+                            <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                                true}"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico7.png"> 
                                 <span>Dashboard</span> 
                             </a>
                         </li>
                         <li class=" " *ngIf="isPermission('accounts')">
-                            <a routerLink="/home/account" [routerLinkActive]="['active']"> 
+                            <a routerLink="/home/account"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                                true}" > 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico8.png">  
                                 <span>Accounts</span> 
                             </a>
                         </li>
                         <li class="" *ngIf="isPermission('vendors')">
-                            <a routerLink="/home/vendor" [routerLinkActive]="['active']"> 
+                            <a routerLink="/home/vendor" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                                true}"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico6.png">  
                                 <span>Vendor</span> 
                             </a>
                         </li>
                         <li class=" " *ngIf="isPermission('support')">
-                            <a routerLink="/home/support" [routerLinkActive]="['active']"> 
+                            <a routerLink="/home/support" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                                true}"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico5.png">  
                                 <span>Support</span> 
                             </a>
@@ -65,7 +69,8 @@
                             </a>
                         </li> -->
                         <li  *ngIf="isPermission('ads')">
-                            <a routerLink="/home/ads" [routerLinkActive]="['active']"> 
+                            <a routerLink="/home/ads" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                                true}"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico3.png">  
                                 <span>Ads</span> 
                             </a>
@@ -77,7 +82,8 @@
                             </a>
                         </li> -->
                         <li  *ngIf="isPermission('users')">
-                            <a routerLink="/home/users" [routerLinkActive]="['active']"> 
+                            <a routerLink="/home/users" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                                true}"> 
                                 <img class="sidebar-img" src="../../../../../assets/images/sideicons/ico1.png"> 
                                 <span>Admin Users</span> 
                             </a>

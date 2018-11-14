@@ -67,13 +67,14 @@ pageTitle:string="Add"
 
 
   save(saveForm) {
+    debugger
     var url=constants.addSubadmmin;
     if(this.id){
       url=constants.updateAdmin;
     }
     saveForm.adminId=this.id;
     
-    var res = this.http.httpPost(url, saveForm);
+    var res = this.http.httpPost(url, JSON.stringify(saveForm));
     res.subscribe((response) => {
       this.openSnackBar(response.message);
       this.userForm.reset();

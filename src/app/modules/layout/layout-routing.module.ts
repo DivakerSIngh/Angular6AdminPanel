@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',  component: LeftmenuComponent, children: [
       // { path: '', component: DashboardComponent },
       // { path: 'question', component: QuestionComponent },
-      // { path: 'ads',  loadChildren: './pages/ads/ads.module#AdsModule',  },
+       { path: 'ads',  loadChildren: './pages/ads/ads.module#AdsModule'  },
       // { path: 'cms', component: CmsComponent },
       {
         path: '',

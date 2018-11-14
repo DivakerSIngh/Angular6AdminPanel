@@ -20,6 +20,7 @@ export class ListComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   vendorList:any[];
+  totalCount:any;
   
   searchObject = {
     limit:0,search:'',plans:"all"
@@ -36,6 +37,7 @@ export class ListComponent implements OnInit {
     result.subscribe((response) => {
       console.log('vendor',response.data)
         this.vendorList=response.data;
+        this.totalCount=response.totals;
     })
   }
 

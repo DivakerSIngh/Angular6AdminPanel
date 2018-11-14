@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   adminUsers:any=[];
-  
+  totalCount:any;
   searchObject = {
     limit:0,search:'',plans:"all"
   }
@@ -34,9 +34,10 @@ export class ListComponent implements OnInit {
     var url="limit="+this.searchObject.limit+"&search="+this.searchObject.search+"&plans="+this.searchObject.plans+"";
     var result = this.http.httpGet(constants.accountUsersList+url);
     result.subscribe((response) => {
-      
+      debugger
       console.log('account',response.data)
         this.adminUsers=response.data;
+        this.totalCount=response.totals;
     })
   }
 

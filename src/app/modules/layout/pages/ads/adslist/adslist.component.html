@@ -10,7 +10,7 @@
       </div>
      
       <div class="content table-responsive table-full-width">
-            <div *ngIf="adminUsers.length==0" class="no-record">
+            <div *ngIf="totalCount==0" class="no-record">
                     <img src="../../../../../../assets/images/no record found.png">
                   </div>
           <table class="table table-hover table-striped">
@@ -40,8 +40,8 @@
                   </tr>
               </tbody>
           </table>
-          <tfoot *ngIf="adminUsers">
-      <mat-paginator [length]="adminUsers.length"
+          <tfoot *ngIf="totalCount">
+      <mat-paginator [length]="totalCount"
                   [pageSize]="10"
                   [pageSizeOptions]="[5, 10, 25, 100]"  (page)="getNext($event)">
     </mat-paginator>

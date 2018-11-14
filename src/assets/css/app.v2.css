@@ -60,6 +60,7 @@ abbr[title] {
 a.active {
    
     border-left: 7px solid black;
+    background: #26f40126;
 }
 b,
 strong {
@@ -15395,7 +15396,8 @@ fieldset[disabled] .btn-gplus.active {
 
 .bg-primary .nav li>a:hover {
     
-    background-color: #e9ecf1;
+    background-color: #26f40126;
+  
 }
 
 .bg-primary .nav li>ul.dropdown-menu>li>a {

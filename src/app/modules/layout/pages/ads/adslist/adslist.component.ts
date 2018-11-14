@@ -22,7 +22,7 @@ export class AdslistComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   adminUsers:any=[];
-  
+  totalCount:any;
   searchObject = {
     limit:0,search:'',plans:"all"
   }
@@ -37,6 +37,7 @@ export class AdslistComponent implements OnInit {
     var result = this.http.httpGet(constants.getAllAdd+url);
     result.subscribe((response) => {
         this.adminUsers=response.data;
+        this.totalCount=response.total;
     })
   }
 

@@ -20,7 +20,7 @@ export class SupportListComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   supportList:any=[];
-  totalCount=0;
+  totalCount:any;
   searchObject = {
     limit:0,search:'',plans:"all"
   }
@@ -34,10 +34,10 @@ export class SupportListComponent implements OnInit {
     var url="limit="+this.searchObject.limit+"&search="+this.searchObject.search+"&priority="+this.searchObject.plans+"";
     var result = this.http.httpGet(constants.allTicket+url);
     result.subscribe((response) => {
-      
+      debugger
       console.log('account',response.data)
         this.supportList=response.data;
-        this.totalCount=response.total
+        this.totalCount=response.total;
     })
   }
 

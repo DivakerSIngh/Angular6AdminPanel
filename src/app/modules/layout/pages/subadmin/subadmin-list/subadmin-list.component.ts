@@ -22,7 +22,7 @@ export class SubadminListComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   adminUsers: any=[];
-
+  totalCount:any;
   searchObject = {
     limit: 0, search: '', plans: "all"
   }
@@ -42,6 +42,8 @@ export class SubadminListComponent implements OnInit {
       
       console.log('subadminlist', response.data)
       this.adminUsers = response.data;
+      debugger
+      this.totalCount=response.total;
     })
   }
 
